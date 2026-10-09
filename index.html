@@ -748,6 +748,18 @@ animation: none;
 
       const card = document.createElement("article");
       card.className = "memory-card";
+      const paperColors = [
+"#D9C9F2", // Lavanda
+"#F2C9D8", // Rosa empolvado
+"#C9E5D6", // Verde menta
+"#F7E5A8", // Amarillo vainilla
+"#C9DDF4" // Azul cielo
+];
+
+const memoryIndex = memories.findIndex(item => item.id === memory.id);
+const colorIndex = memoryIndex % paperColors.length;
+
+card.style.setProperty("--paper-color", paperColors[colorIndex]);
 
       const date = document.createElement("div");
       date.className = "memory-date";
