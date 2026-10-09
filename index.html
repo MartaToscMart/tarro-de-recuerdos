@@ -177,25 +177,15 @@
     .paper-star { 
       display: inline-block; 
       position: relative; 
-      width: 1em; 
-      height: 1em; 
       flex-shrink: 0; 
       font-size: 28px; 
       line-height: 1; 
-      background: var(--star-color, #D9C9F2); 
-      clip-path: polygon( 
-        50% 0%, 
-        61% 32%, 
-        96% 25%, 
-        72% 51%, 
-        88% 84%, 
-        56% 70%, 
-        35% 100%, 
-        35% 66%, 
-        4% 55%, 
-        34% 40% 
-      ); 
-      filter: drop-shadow(0 2px 2px #44365355); 
+      color: var(--star-color, #D9C9F2); 
+      text-shadow: 
+        -1px -1px 0 rgba(255, 255, 255, 0.65), 
+        1px 1px 0 rgba(120, 90, 140, 0.18), 
+        2px 3px 3px rgba(60, 40, 70, 0.20); 
+      filter: drop-shadow(0 2px 2px rgba(60, 40, 70, 0.18)); 
       transform: rotate(var(--tilt, 0deg)); 
     }
 
@@ -711,7 +701,7 @@ animation: none;
       memories.forEach((memory, index) => {
         const star = document.createElement("span");
         star.className = "paper-star";
-        star.textContent = "";
+        star.textContent = "★";
         star.style.setProperty("--star-color", colors[index % colors.length]);
         star.style.setProperty("--tilt", `${(index * 37) % 35 - 17}deg`);
         star.style.fontSize = `${22 + (index % 3) * 3}px`;
