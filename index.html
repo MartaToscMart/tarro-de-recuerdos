@@ -444,45 +444,25 @@
         </div>
       </section>
 
-      <section class="panel add-panel" style="grid-column:1/-1">
-        <h2 class="section-title">Guardar un nuevo recuerdo</h2>
-        <p class="muted">Escribe ese momento que nunca quieres olvidar.</p>
-
-        <form id="memoryForm" class="form-grid">
-          <div>
-            <label for="memoryDate">Fecha del recuerdo</label>
-            <input type="date" id="memoryDate" required>
-          </div>
-
-          <div>
-            <label for="memoryTitle">Título del recuerdo</label>
-            <input type="text" id="memoryTitle"
-              placeholder="Nuestro primer viaje..." maxlength="100" required>
-          </div>
-
-          <div>
-            <label for="memoryText">Nuestra historia</label>
-            <textarea id="memoryText"
-              placeholder="Cuéntame qué pasó, qué sentiste y por qué quieres recordarlo..."
-              maxlength="5000" required></textarea>
-          </div>
-
-          <div>
-            <label for="memoryPhoto">Una fotografía (opcional)</label>
-            <input type="file" id="memoryPhoto" accept="image/*">
-            <p class="form-note">
-              Para esta versión de prueba, elige una foto pequeña.
-              Los navegadores tienen límites de almacenamiento.
-            </p>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="primary">♡ Guardar recuerdo</button>
-            <button type="reset" class="secondary">Borrar formulario</button>
-          </div>
-          <p class="form-note" id="formStatus" role="status"></p>
-        </form>
-      </section>
+      <dialog id="memoryDialog" class="memory-dialog">
+  <section class="panel add-panel">
+    <div class="modal-heading">
+      <div>
+        <h2 class="section-title">Una nueva estrella ✨</h2>
+        <p class="muted">Guarda otro pedacito de vuestra historia.</p>
+      </div>
+      <button type="button" id="closeMemoryDialog" class="secondary close-modal" aria-label="Cerrar ventana">✕</button>
+    </div>
+    <form id="memoryForm" class="form-grid">
+      <div><label for="memoryDate">Fecha del recuerdo</label><input type="date" id="memoryDate" required></div>
+      <div><label for="memoryTitle">Título del recuerdo</label><input type="text" id="memoryTitle" placeholder="Nuestro primer viaje..." maxlength="100" required></div>
+      <div><label for="memoryText">Nuestra historia</label><textarea id="memoryText" placeholder="Cuéntame qué pasó, qué sentiste y por qué quieres recordarlo..." maxlength="5000" required></textarea></div>
+      <div><label for="memoryPhoto">Una fotografía (opcional)</label><input type="file" id="memoryPhoto" accept="image/*"><p class="form-note">Para esta versión de prueba, elige una foto pequeña.</p></div>
+      <div class="form-actions"><button type="submit" class="primary">♡ Guardar estrella</button><button type="reset" class="secondary">Borrar formulario</button></div>
+      <p class="form-note" id="formStatus" role="status"></p>
+    </form>
+  </section>
+</dialog>
     </div>
 
     <footer>“De todos los lugares del mundo, mi favorito eres tú.” ♡</footer>
