@@ -742,6 +742,34 @@ padding: 18px;
     renderJar();
     renderNotebook();
   </script>
-  <script> const memoryDialog = document.getElementById('memoryDialog'); const closeMemoryDialog = document.getElementById('closeMemoryDialog'); // Cerrar con la X closeMemoryDialog.addEventListener('click', () => { memoryDialog.close(); }); // Cerrar al pulsar fuera de la ventana memoryDialog.addEventListener('click', (event) => { if (event.target === memoryDialog) { memoryDialog.close(); } }); // Crear el botón para añadir recuerdos const addStarButton = document.createElement('button'); addStarButton.type = 'button'; addStarButton.className = 'primary'; addStarButton.textContent = '＋ Añadir una estrella'; addStarButton.addEventListener('click', () => { memoryDialog.showModal(); }); // Colocar el botón justo antes de la ventana memoryDialog.parentElement.insertBefore(addStarButton, memoryDialog); </script>
+  <script> const memoryDialog = document.getElementById('memoryDialog');
+    const closeMemoryDialog =
+      document.getElementById('closeMemoryDialog'); 
+    
+    // Cerrar con la X
+    closeMemoryDialog.addEventListener('click', () => { 
+      memoryDialog.close(); 
+    }); 
+    
+    // Cerrar al pulsar fuera de la ventana 
+    memoryDialog.addEventListener('click', (event) => { 
+      if (event.target === memoryDialog) { 
+        memoryDialog.close(); 
+      } }); 
+    
+    // Crear el botón para añadir recuerdos 
+    const addStarButton = document.createElement('button'); 
+    addStarButton.type = 'button'; 
+    addStarButton.className = 'primary'; 
+    addStarButton.textContent = '＋ Añadir una estrella'; 
+    
+    addStarButton.addEventListener('click', () => { 
+      memoryDialog.showModal();
+    }); 
+    
+    // Colocar el botón justo antes de la ventana 
+    memoryDialog.parentElement.insertBefore(addStarButton,
+    memoryDialog);
+  </script>
 </body>
 </html>
