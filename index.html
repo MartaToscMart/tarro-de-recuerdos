@@ -440,8 +440,7 @@ padding: 18px;
 
   /* Colores pastel y textura de papel */
 #revealArea .memory-card {
---paper-color: #D9C9F2;
-background-color: var(--paper-color);
+ background-color: var(--paper-color, #D9C9F2);
 background-image:
 radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.32), transparent 45%),
 radial-gradient(ellipse at 80% 75%, rgba(90,60,110,0.07), transparent 50%),
@@ -749,11 +748,11 @@ animation: none;
       const card = document.createElement("article");
       card.className = "memory-card";
       const paperColors = [
-"#D9C9F2", // Lavanda
-"#F2C9D8", // Rosa empolvado
-"#C9E5D6", // Verde menta
-"#F7E5A8", // Amarillo vainilla
-"#C9DDF4" // Azul cielo
+  "#D9C9F2",
+  "#F2C9D8",
+  "#C9E5D6",
+  "#F7E5A8",
+  "#C9DDF4"
 ];
 
 const memoryIndex = memories.findIndex(item => item.id === memory.id);
