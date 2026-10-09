@@ -174,13 +174,29 @@
       overflow: hidden;
     }
 
-    .paper-star {
-      display: inline-block;
-      color: var(--star-color, #e8c47e);
-      font-size: 28px;
-      line-height: 1;
-      filter: drop-shadow(0 2px 1px #8b626522);
-      transform: rotate(var(--tilt, 0deg));
+    .paper-star { 
+      display: inline-block; 
+      position: relative; 
+      width: 1em; 
+      height: 1em; 
+      flex-shrink: 0; 
+      font-size: 28px; 
+      line-height: 1; 
+      background: var(--star-color, #D9C9F2); 
+      clip-path: polygon( 
+        50% 0%, 
+        61% 32%, 
+        96% 25%, 
+        72% 51%, 
+        88% 84%, 
+        56% 70%, 
+        35% 100%, 
+        35% 66%, 
+        4% 55%, 
+        34% 40% 
+      ); 
+      filter: drop-shadow(0 2px 2px #44365355); 
+      transform: rotate(var(--tilt, 0deg)); 
     }
 
     .jar-heart {
@@ -695,7 +711,7 @@ animation: none;
       memories.forEach((memory, index) => {
         const star = document.createElement("span");
         star.className = "paper-star";
-        star.textContent = "★";
+        star.textContent = "";
         star.style.setProperty("--star-color", colors[index % colors.length]);
         star.style.setProperty("--tilt", `${(index * 37) % 35 - 17}deg`);
         star.style.fontSize = `${22 + (index % 3) * 3}px`;
