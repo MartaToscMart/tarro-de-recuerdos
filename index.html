@@ -800,6 +800,32 @@ closeButton.addEventListener("click", () => {
 
 card.appendChild(closeButton);
 
+// Botón para eliminar este recuerdo
+const deleteButton = document.createElement("button");
+deleteButton.type = "button";
+deleteButton.className = "secondary";
+deleteButton.textContent = "Eliminar nota";
+deleteButton.style.display = "block";
+deleteButton.style.margin = "20px auto 0";
+
+deleteButton.addEventListener("click", () => {
+const confirmed = confirm("¿Seguro que quieres eliminar este recuerdo? Esta acción no se puede deshacer.");
+
+if (!confirmed) return;
+
+const previousMemories = [...memories];
+memories = memories.filter(item => item.id !== memory.id);
+
+if (saveMemories()) {
+revealArea.replaceChildren();
+revealArea.style.display = "none";
+} else {
+memories = previousMemories;
+}
+});
+
+card.appendChild(deleteButton);
+
 // Mostrar el recuerdo como una ventana flotante
 revealArea.appendChild(card);
 revealArea.style.display = "flex";
