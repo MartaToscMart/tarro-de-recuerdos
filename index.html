@@ -731,6 +731,7 @@ padding: 18px;
       showMemory(memory.id);
       memoryForm.reset();
       formStatus.textContent = "Recuerdo guardado en este navegador. ♡";
+      memoryDialog.close();
     });
 
     drawButton.addEventListener("click", drawStar);
