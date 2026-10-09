@@ -745,20 +745,24 @@ animation: none;
       lastDrawnId = memory.id;
       revealArea.replaceChildren();
 
-      const card = document.createElement("article");
-      card.className = "memory-card";
-      const paperColors = [
-  "#D9C9F2",
-  "#F2C9D8",
-  "#C9E5D6",
-  "#F7E5A8",
-  "#C9DDF4"
-];
-
-const memoryIndex = memories.findIndex(item => item.id === memory.id);
-const colorIndex = memoryIndex % paperColors.length;
-
-card.style.setProperty("--paper-color", paperColors[colorIndex]);
+      const card = document.createElement("article"); 
+      card.className = "memory-card"; 
+      
+      const paperColors = [ 
+        "#D9C9F2", // Lavanda 
+        "#F2C9D8", // Rosa pastel 
+        "#C9E5D6", // Verde menta 
+        "#F7E5A8", // Amarillo vainilla 
+        "#C9DDF4" // Azul cielo 
+        ]; 
+      
+      const colorNumber = memories.findIndex(item => item.id === id); 
+      const colorIndex = colorNumber >= 0 ? colorNumber % 
+        paperColors.length : 0;
+      card.style.setProperty("--paper-color", paperColors[colorIndex], 
+      "important"); 
+      card.style.setProperty("background-color", 
+      paperColors[colorIndex], "important");
 
       const date = document.createElement("div");
       date.className = "memory-date";
