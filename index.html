@@ -693,11 +693,31 @@ padding: 18px;
       }
 
       const closeHint = document.createElement("p");
-      closeHint.className = "muted";
-      closeHint.textContent = "Un recuerdo vuestro, para volver siempre que queráis. ♡";
-      card.appendChild(closeHint);
+closeHint.className = "muted";
+closeHint.textContent = "Un recuerdo vuestro, para volver siempre que queráis. ♡";
+card.appendChild(closeHint);
 
-      revealArea.appendChild(card);
+// Botón para cerrar el recuerdo
+const closeButton = document.createElement("button");
+closeButton.type = "button";
+closeButton.className = "secondary";
+closeButton.textContent = "✕";
+closeButton.setAttribute("aria-label", "Cerrar recuerdo");
+
+closeButton.style.position = "absolute";
+closeButton.style.top = "10px";
+closeButton.style.right = "10px";
+
+closeButton.addEventListener("click", () => {
+  revealArea.replaceChildren();
+  revealArea.style.display = "none";
+});
+
+card.appendChild(closeButton);
+
+// Mostrar el recuerdo como una ventana flotante
+revealArea.appendChild(card);
+revealArea.style.display = "flex";
     }
 
     function drawStar() {
