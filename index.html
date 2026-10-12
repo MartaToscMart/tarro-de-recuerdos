@@ -127,41 +127,66 @@
     }
 
     .jar-glass {
-      position: absolute;
-      top: 39px;
-      left: 32px;
-      width: 181px;
-      height: 211px;
-      border: 3px solid #d6b4b3;
-      border-top: 0;
-      border-radius: 15px 15px 38px 38px;
-      background: linear-gradient(110deg, #ffffffa8, #f9e5e56b 42%, #fffaf4a8);
-      box-shadow: inset 10px 0 15px #fff9, inset -8px 0 12px #dfbdc133,
-                  0 15px 25px #9e64731c;
-      overflow: hidden;
-    }
+  position: absolute;
+  top: 39px;
+  left: 32px;
+  width: 181px;
+  height: 211px;
+  box-sizing: border-box;
 
-    .jar-glass::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 9px;
-      height: 85%;
-      width: 8px;
-      border-radius: 10px;
-      background: #fff9;
-    }
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-top: 0;
+  border-radius: 15px 15px 38px 38px;
 
-    .jar-glass::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 12px;
-      background: #ffffff59;
-      border-radius: 0 0 35px 35px;
-    }
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.12) 12%,
+      rgba(255, 255, 255, 0.03) 35%,
+      rgba(217, 201, 242, 0.10) 72%,
+      rgba(255, 255, 255, 0.48) 100%
+    );
+
+  box-shadow:
+    inset 8px 0 8px rgba(255, 255, 255, 0.52),
+    inset -7px 0 9px rgba(169, 149, 213, 0.18),
+    inset 0 -9px 12px rgba(255, 255, 255, 0.30),
+    0 12px 22px rgba(68, 54, 83, 0.12);
+
+  overflow: hidden;
+}
+
+.jar-glass::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  width: 7px;
+  height: 72%;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.12)
+  );
+
+  filter: blur(0.4px);
+}
+
+.jar-glass::after {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: 3px;
+  width: 90%;
+  height: 10px;
+  border-radius: 50%;
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 3px 5px rgba(169, 149, 213, 0.16);
+}
 
     .stars {
       position: absolute;
